@@ -1,0 +1,117 @@
+{
+  "model_version": "xgb-2015-2024-v1",
+  "trained_on": "2015-01-01 to 2024-12-30",
+  "n_train_matches": 27506,
+  "test_year": 2025,
+  "data_cutoff": "2025-12-17",
+  "features": [
+    "diff_elo",
+    "diff_surface_elo",
+    "diff_log_rank",
+    "diff_log_points",
+    "diff_recent_win_rate",
+    "diff_surface_win_rate",
+    "diff_log_matches",
+    "diff_log_surface_matches",
+    "diff_age",
+    "best_of_5"
+  ],
+  "player_features": [
+    "elo",
+    "surface_elo",
+    "log_rank",
+    "log_points",
+    "recent_win_rate",
+    "surface_win_rate",
+    "log_matches",
+    "log_surface_matches",
+    "age"
+  ],
+  "elo_weight": 0.5,
+  "elo_validation_log_loss": {
+    "0.0": 0.6405481978584391,
+    "0.25": 0.6305095703478089,
+    "0.5": 0.6255865923180354,
+    "0.75": 0.6258817735256714,
+    "1.0": 0.6312564582269955
+  },
+  "xgb_params": {
+    "max_depth": 4,
+    "n_estimators": 400,
+    "learning_rate": 0.05
+  },
+  "xgb_cv_results": [
+    {
+      "max_depth": 2,
+      "n_estimators": 150,
+      "learning_rate": 0.05,
+      "fold_log_loss": [
+        0.5955613851547241,
+        0.618153989315033,
+        0.6123212575912476
+      ],
+      "mean_log_loss": 0.6086788773536682
+    },
+    {
+      "max_depth": 2,
+      "n_estimators": 400,
+      "learning_rate": 0.05,
+      "fold_log_loss": [
+        0.591776430606842,
+        0.6180418133735657,
+        0.6114175915718079
+      ],
+      "mean_log_loss": 0.6070786118507385
+    },
+    {
+      "max_depth": 3,
+      "n_estimators": 150,
+      "learning_rate": 0.05,
+      "fold_log_loss": [
+        0.5932609438896179,
+        0.6172011494636536,
+        0.6115100383758545
+      ],
+      "mean_log_loss": 0.6073240439097086
+    },
+    {
+      "max_depth": 3,
+      "n_estimators": 400,
+      "learning_rate": 0.05,
+      "fold_log_loss": [
+        0.5918247699737549,
+        0.6172540187835693,
+        0.611048698425293
+      ],
+      "mean_log_loss": 0.6067091623942057
+    },
+    {
+      "max_depth": 4,
+      "n_estimators": 150,
+      "learning_rate": 0.05,
+      "fold_log_loss": [
+        0.591842532157898,
+        0.6163443922996521,
+        0.6112597584724426
+      ],
+      "mean_log_loss": 0.6064822276433309
+    },
+    {
+      "max_depth": 4,
+      "n_estimators": 400,
+      "learning_rate": 0.05,
+      "fold_log_loss": [
+        0.5912097096443176,
+        0.616580605506897,
+        0.6115376353263855
+      ],
+      "mean_log_loss": 0.6064426501592001
+    }
+  ],
+  "validation_years": [
+    2022,
+    2023,
+    2024
+  ],
+  "built": "2026-11-11"
+}
