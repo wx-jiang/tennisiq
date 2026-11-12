@@ -1,0 +1,738 @@
+[
+  {
+    "id": "pred_01",
+    "category": "prediction",
+    "query": "Who is more likely to win between Alcaraz and Sinner on clay?",
+    "answer": "Based on model estimates using data up to 2025-12-17, Carlos Alcaraz is more likely to win against Jannik Sinner on clay. The XGBoost model predicts a 59.6% win probability for Alcaraz, while the Elo-based model predicts a 55.4% win probability for him.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player2": "Sinner",
+          "surface": "Clay",
+          "player1": "Carlos Alcaraz"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 2.72
+  },
+  {
+    "id": "pred_02",
+    "category": "prediction",
+    "query": "What are Djokovic's chances against Zverev on a hard court?",
+    "answer": "Based on model estimates using data up to 2025-12-17, Novak Djokovic has a 58.3% win probability against Alexander Zverev on hard courts according to the XGBoost model, while the Elo-based win probability is 70.1%. These are model-calculated predictions for a best-of-3 match and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player2": "Alexander Zverev",
+          "player1": "Novak Djokovic",
+          "surface": "Hard"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 2.12
+  },
+  {
+    "id": "pred_03",
+    "category": "prediction",
+    "query": "Would Daniil Medvedev beat Taylor Fritz on grass?",
+    "answer": "Based on model estimates using data up to 2025-12-17, Taylor Fritz is favored to beat Daniil Medvedev on grass, with an Elo-based win probability of 60.5% and an XGBoost-based win probability of 58.5%. Please note that these are model-calculated probabilities for a best-of-3 match and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player1": "Daniil Medvedev",
+          "surface": "Grass",
+          "player2": "Taylor Fritz"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 17.26
+  },
+  {
+    "id": "pred_04",
+    "category": "prediction",
+    "query": "What's the probability that Casper Ruud beats Stefanos Tsitsipas on clay?",
+    "answer": "Based on model estimates using data up to 2025-12-17, Casper Ruud has a 55.2% win probability against Stefanos Tsitsipas on clay, while the Elo-based win probability is 56.5%. Please note that these are model-calculated probabilities for a best-of-3 match and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player2": "Stefanos Tsitsipas",
+          "surface": "Clay",
+          "player1": "Casper Ruud"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.72
+  },
+  {
+    "id": "pred_05",
+    "category": "prediction",
+    "query": "Jack Draper vs Alex de Minaur on hard court: who is favored?",
+    "answer": "Based on model estimates using data up to 2025-12-17, Jack Draper is favored over Alex de Minaur on hard courts. The model predicts a win probability of 56% for Draper and 44% for de Minaur, while the Elo-based win probability favors Draper at 58.9% compared to 41.1% for de Minaur.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player2": "Alex de Minaur",
+          "surface": "Hard",
+          "player1": "Jack Draper"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.49
+  },
+  {
+    "id": "pred_06",
+    "category": "prediction",
+    "query": "Give me both the Elo-based and the XGBoost probabilities for Holger Rune vs Ben Shelton on hard.",
+    "answer": "For a hard court match between Holger Rune and Ben Shelton, the Elo-based win probabilities are 45.8% for Rune and 54.2% for Shelton. The XGBoost model estimates a 45.7% win probability for Rune and 54.3% for Shelton. These are model estimates based on data up to the 2025-12-17 cutoff.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player1": "Holger Rune",
+          "player2": "Ben Shelton",
+          "surface": "Hard"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 3.21
+  },
+  {
+    "id": "pred_07",
+    "category": "prediction",
+    "query": "Federer vs Nadal on grass, who would win?",
+    "answer": "Based on model estimates using data up to 2025-12-17, Roger Federer has a 70.9% win probability against Rafael Nadal on grass, while the Elo-based win probability is 60.5%. Please note that these are model estimates and not historical facts, and the tool warns that the player data for both Federer and Nadal may be outdated.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "surface": "Grass",
+          "player2": "Rafael Nadal",
+          "player1": "Roger Federer"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.92
+  },
+  {
+    "id": "pred_08",
+    "category": "prediction",
+    "query": "Lorenzo Musetti or Andrey Rublev on clay?",
+    "answer": "Based on model estimates using data up to 2025-12-17, Lorenzo Musetti has a 69.5% win probability against Andrey Rublev on clay, while the Elo-based win probability is 71.2%. These are model-calculated predictions for a best-of-3 match and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player2": "Andrey Rublev",
+          "player1": "Lorenzo Musetti",
+          "surface": "Clay"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 2.48
+  },
+  {
+    "id": "stats_01",
+    "category": "stats",
+    "query": "What was Djokovic's win rate on hard courts in 2024?",
+    "answer": "In 2024, Novak Djokovic had a 75.0% win rate on hard courts, based on 18 wins and 6 losses. This is a historical fact computed from match records.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2024,
+          "player": "Novak Djokovic",
+          "surface": "Hard"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.56
+  },
+  {
+    "id": "stats_02",
+    "category": "stats",
+    "query": "How many matches did Jannik Sinner win in 2024?",
+    "answer": "In 2024, Jannik Sinner won 73 matches. This is a historical fact based on ATP tour-level main-draw singles records.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2024,
+          "player": "Jannik Sinner"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.48
+  },
+  {
+    "id": "stats_03",
+    "category": "stats",
+    "query": "What was Carlos Alcaraz's record on grass in 2023?",
+    "answer": "In 2023, Carlos Alcaraz had a record of 12 wins and 0 losses on grass, resulting in a 100.0% win percentage. This is a historical fact based on ATP tour-level main-draw singles matches.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2023,
+          "surface": "Grass",
+          "player": "Carlos Alcaraz"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.91
+  },
+  {
+    "id": "stats_04",
+    "category": "stats",
+    "query": "What is Rafael Nadal's career win percentage on clay in your data?",
+    "answer": "According to historical facts from my data, Rafael Nadal has a career win percentage of 89.6% on clay, based on 303 wins and 35 losses between 2010 and 2025.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "surface": "Clay",
+          "player": "Rafael Nadal"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.97
+  },
+  {
+    "id": "stats_05",
+    "category": "stats",
+    "query": "What was Medvedev's overall win-loss record in 2021?",
+    "answer": "In 2021, Daniil Medvedev had an overall win-loss record of 63 wins and 13 losses, according to historical facts. This represents an 82.9% win percentage across 76 matches.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2021,
+          "player": "Daniil Medvedev"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.74
+  },
+  {
+    "id": "stats_06",
+    "category": "stats",
+    "query": "Zverev's win rate on clay in 2022?",
+    "answer": "In 2022, Alexander Zverev had a 77.3% win rate on clay, based on 17 wins and 5 losses. This is a historical fact computed from match records.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "player": "Alexander Zverev",
+          "year": 2022,
+          "surface": "Clay"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 2.43
+  },
+  {
+    "id": "stats_07",
+    "category": "stats",
+    "query": "How did Andy Murray do on grass in 2016?",
+    "answer": "In 2016, Andy Murray had a perfect record on grass, winning all 12 of his matches for a 100.0% win percentage. This is a historical fact based on ATP tour-level main-draw singles records.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2016,
+          "player": "Andy Murray",
+          "surface": "Grass"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.62
+  },
+  {
+    "id": "stats_08",
+    "category": "stats",
+    "query": "Roger Federer's 2017 match record, please.",
+    "answer": "In 2017, Roger Federer had a match record of 54 wins and 5 losses, resulting in a 91.5% win percentage. This historical fact is based on ATP tour-level main-draw singles matches.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2017,
+          "player": "Roger Federer"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.6
+  },
+  {
+    "id": "surf_01",
+    "category": "surface_comparison",
+    "query": "Compare Sinner and Zverev across all surfaces.",
+    "answer": "Based on model estimates with a data cutoff of 2025-12-17, Jannik Sinner is favored over Alexander Zverev across all surfaces. On hard courts, the model predicts a 70.8% win probability for Sinner, while on clay and grass, his win probabilities are 62.4% and 68.8%, respectively. Please note these are model-calculated probabilities for best-of-3 matches and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "compare_surfaces",
+        "arguments": {
+          "player2": "Zverev",
+          "player1": "Sinner"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.54
+  },
+  {
+    "id": "surf_02",
+    "category": "surface_comparison",
+    "query": "On which surface does Djokovic have the best chance against Alcaraz?",
+    "answer": "Based on model estimates with a data cutoff of 2025-12-17, Novak Djokovic has the best chance against Carlos Alcaraz on grass courts. The model predicts a win probability of 0.363 for Djokovic on grass, compared to 0.346 on hard courts and 0.296 on clay. Please note these are model-calculated probabilities for a best-of-3 match and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "compare_surfaces",
+        "arguments": {
+          "player2": "Carlos Alcaraz",
+          "player1": "Novak Djokovic"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.89
+  },
+  {
+    "id": "surf_03",
+    "category": "surface_comparison",
+    "query": "How do Taylor Fritz's chances against Jack Draper vary by surface?",
+    "answer": "Based on model estimates with a data cutoff of 2025-12-17, Taylor Fritz's win probabilities against Jack Draper vary across surfaces. On hard courts, the XGBoost model estimates a 44% win probability for Fritz, while on clay it is 42.3%, and on grass it is 47.6%. Please note these are model-calculated probabilities for best-of-3 matches and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "compare_surfaces",
+        "arguments": {
+          "player1": "Taylor Fritz",
+          "player2": "Jack Draper"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.7
+  },
+  {
+    "id": "surf_04",
+    "category": "surface_comparison",
+    "query": "Medvedev vs Ruud: show me hard, clay and grass win probabilities.",
+    "answer": "Based on model estimates with a data cutoff of 2025-12-17, the win probabilities for Daniil Medvedev versus Casper Ruud are as follows: on hard courts, Medvedev has a 56.4% probability (XGBoost) or 58.8% (Elo); on clay, Medvedev has a 33.5% probability (XGBoost) or 44.5% (Elo); and on grass, Medvedev has a 67.1% probability (XGBoost) or 74.6% (Elo). These are model-calculated estimates for a best-of-3 match and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "compare_surfaces",
+        "arguments": {
+          "player1": "Daniil Medvedev",
+          "player2": "Casper Ruud"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 2.3
+  },
+  {
+    "id": "surf_05",
+    "category": "surface_comparison",
+    "query": "Alcaraz versus Djokovic, surface by surface.",
+    "answer": "Based on model estimates with a data cutoff of 2025-12-17, Carlos Alcaraz is favored over Novak Djokovic across all surfaces. On hard courts, the XGBoost win probability is 65.4% for Alcaraz and 34.6% for Djokovic; on clay, it is 70.4% for Alcaraz and 29.6% for Djokovic; and on grass, it is 63.7% for Alcaraz and 36.3% for Djokovic. Please note these are model-calculated probabilities for best-of-3 matches and not historical facts.",
+    "tool_calls": [
+      {
+        "name": "compare_surfaces",
+        "arguments": {
+          "player2": "Novak Djokovic",
+          "player1": "Carlos Alcaraz"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 5.56
+  },
+  {
+    "id": "multi_01",
+    "category": "multi_step",
+    "query": "What was Alcaraz's win rate on clay in 2025, and what are his chances against Sinner on clay?",
+    "answer": "In 2025, Carlos Alcaraz had a 95.7% win rate on clay, based on 22 wins and 1 loss. Regarding his chances against Jannik Sinner on clay, the model estimates a 59.6% win probability for Alcaraz and a 40.4% win probability for Sinner, based on data up to the 2025-12-17 cutoff.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "surface": "Clay",
+          "player": "Carlos Alcaraz",
+          "year": 2025
+        },
+        "error": null
+      },
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player2": "Sinner",
+          "player1": "Carlos Alcaraz",
+          "surface": "Clay"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.5
+  },
+  {
+    "id": "multi_02",
+    "category": "multi_step",
+    "query": "Compare Djokovic's hard-court win rates in 2023 and 2024.",
+    "answer": "In 2023, Novak Djokovic had a hard-court win percentage of 92.7% (38 wins, 3 losses). In 2024, his hard-court win percentage was 75.0% (18 wins, 6 losses). These are historical facts computed from match records.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2023,
+          "player": "Novak Djokovic",
+          "surface": "Hard"
+        },
+        "error": null
+      },
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "surface": "Hard",
+          "year": 2024,
+          "player": "Novak Djokovic"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.81
+  },
+  {
+    "id": "multi_03",
+    "category": "multi_step",
+    "query": "How would the prediction change if they played on grass instead?",
+    "answer": "On grass, model estimates using data up to 2025-12-17 still favor Carlos Alcaraz, though the probabilities shift slightly. The XGBoost model predicts a 57.8% win probability for Alcaraz, and the Elo-based model predicts a 52.6% win probability for him.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "player1": "Carlos Alcaraz",
+          "surface": "Grass",
+          "player2": "Jannik Sinner"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.76
+  },
+  {
+    "id": "multi_04",
+    "category": "multi_step",
+    "query": "And in 2023?",
+    "answer": "In 2023, Jannik Sinner had a record of 48 wins and 9 losses on hard courts, resulting in an 84.2% win percentage. This is a historical fact based on ATP tour-level main-draw singles matches.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "surface": "Hard",
+          "year": 2023,
+          "player": "Jannik Sinner"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 1,
+    "facts_total": 1,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 28.41
+  },
+  {
+    "id": "multi_05",
+    "category": "multi_step",
+    "query": "Who had more match wins in 2024, Sinner or Alcaraz?",
+    "answer": "In 2024, Jannik Sinner had 73 match wins, while Carlos Alcaraz had 54 match wins. These are historical facts based on ATP tour-level main-draw singles records.",
+    "tool_calls": [
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2024,
+          "player": "Sinner"
+        },
+        "error": null
+      },
+      {
+        "name": "get_player_stats",
+        "arguments": {
+          "year": 2024,
+          "player": "Alcaraz"
+        },
+        "error": null
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 2,
+    "facts_total": 2,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 2.08
+  },
+  {
+    "id": "invalid_01",
+    "category": "invalid",
+    "query": "Who would win between Roger Rabbit and Jannik Sinner on hard court?",
+    "answer": "I am sorry, but I cannot provide a prediction because there is no ATP tour-level player matching \"Roger Rabbit\" in the dataset (2010-2025). Please check the name and try again.",
+    "tool_calls": [
+      {
+        "name": "predict_match",
+        "arguments": {
+          "surface": "Hard",
+          "player1": "Roger Rabbit",
+          "player2": "Jannik Sinner"
+        },
+        "error": "No ATP tour-level player matching 'Roger Rabbit' in the dataset (2010-2025)."
+      }
+    ],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 0,
+    "facts_total": 0,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 2,
+    "latency_s": 1.25
+  },
+  {
+    "id": "invalid_02",
+    "category": "invalid",
+    "query": "Predict Alcaraz vs Sinner on carpet.",
+    "answer": "I am sorry, but I only have data for hard, clay, and grass courts. I cannot provide a prediction for carpet.",
+    "tool_calls": [],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 0,
+    "facts_total": 0,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 1,
+    "latency_s": 1.01
+  },
+  {
+    "id": "invalid_03",
+    "category": "invalid",
+    "query": "What was Djokovic's record in 2031?",
+    "answer": "I am sorry, but I only have access to ATP men's singles data from 2010 to 2025. I cannot provide records for 2031.",
+    "tool_calls": [],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 0,
+    "facts_total": 0,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 1,
+    "latency_s": 0.67
+  },
+  {
+    "id": "invalid_04",
+    "category": "invalid",
+    "query": "What was Serena Williams' win rate on clay in 2015?",
+    "answer": "I am sorry, but I only have access to ATP men's singles data from 2010 to 2025. I cannot provide statistics for Serena Williams.",
+    "tool_calls": [],
+    "tool_selection_correct": true,
+    "argument_score": 1.0,
+    "facts_found": 0,
+    "facts_total": 0,
+    "ungrounded_numbers": [],
+    "success": true,
+    "iterations": 1,
+    "latency_s": 0.78
+  }
+]

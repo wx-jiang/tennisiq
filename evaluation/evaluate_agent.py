@@ -19,9 +19,11 @@ Criteria (all programmatic; the LLM's own wording is never trusted as evidence):
 5. Latency: wall-clock seconds per query (setup turns for follow-ups excluded).
 """
 
+import argparse
 import json
 import re
 import statistics
+import time
 from pathlib import Path
 
 from src import llm
@@ -179,9 +181,15 @@ def summarize(rows: list[dict]) -> dict:
 def main() -> None:
     if not llm.is_configured():
         raise SystemExit("No LLM configured: start Ollama or set LLM_PROVIDER=openai and OPENAI_API_KEY.")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--pause", type=float, default=0.0,
+                        help="seconds to wait between queries (for rate-limited APIs; not counted in latency)")
+    pause = parser.parse_args().pause
     cases = json.loads(QUERIES_PATH.read_text())
     rows = []
-    for case in cases:
+    for i, case in enumerate(cases):
+        if i and pause:
+            time.sleep(pause)
         rows.append(evaluate_case(case))
         r = rows[-1]
         print(f"{r['id']:<11} success={r['success']!s:<5} tools={[c['name'] for c in r['tool_calls']]} "

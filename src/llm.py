@@ -2,7 +2,8 @@
 
 Messages use one internal format, converted per provider:
   {"role": "system" | "user", "content": str}
-  {"role": "assistant", "content": str, "tool_calls": [{"id", "name", "arguments": dict}]}
+  {"role": "assistant", "content": str, "tool_calls": [{"id", "name", "arguments": dict, "raw"?}]}
+  ("raw" is the OpenAI-format call exactly as the provider returned it, replayed unchanged.)
   {"role": "tool", "tool_call_id": str, "name": str, "content": str}
 
 Configuration (environment variables; the Streamlit app also copies st.secrets into env):
@@ -87,8 +88,8 @@ def _chat_openai(messages: list[dict], tools: list[dict]) -> LLMReply:
     converted = []
     for m in messages:
         if m["role"] == "assistant" and m.get("tool_calls"):
-            calls = [{"id": c["id"], "type": "function",
-                      "function": {"name": c["name"], "arguments": json.dumps(c["arguments"])}}
+            calls = [c.get("raw") or {"id": c["id"], "type": "function",
+                                      "function": {"name": c["name"], "arguments": json.dumps(c["arguments"])}}
                      for c in m["tool_calls"]]
             converted.append({"role": "assistant", "content": m["content"] or None, "tool_calls": calls})
         elif m["role"] == "assistant":
@@ -98,7 +99,9 @@ def _chat_openai(messages: list[dict], tools: list[dict]) -> LLMReply:
         else:
             converted.append(m)
 
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url=os.getenv("OPENAI_BASE_URL") or None)
+    # Extra retries ride out short rate-limit (429) bursts on free API tiers.
+    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url=os.getenv("OPENAI_BASE_URL") or None,
+                    max_retries=5)
     resp = client.chat.completions.create(model=model_name(), messages=converted, tools=tools, temperature=0)
     msg = resp.choices[0].message
     calls = []
@@ -107,5 +110,8 @@ def _chat_openai(messages: list[dict], tools: list[dict]) -> LLMReply:
             args = json.loads(c.function.arguments or "{}")
         except json.JSONDecodeError:
             args = {"_invalid_json": c.function.arguments}  # rejected later by argument validation
-        calls.append({"id": c.id, "name": c.function.name, "arguments": args})
+        # Keep the provider's tool call verbatim for replay: Gemini 3 attaches a thought
+        # signature (extra_content) that must be sent back or the next request fails.
+        calls.append({"id": c.id, "name": c.function.name, "arguments": args,
+                      "raw": c.model_dump(exclude_none=True)})
     return LLMReply(content=msg.content or "", tool_calls=calls)

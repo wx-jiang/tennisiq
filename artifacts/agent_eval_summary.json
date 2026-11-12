@@ -1,22 +1,22 @@
 {
-  "provider": "ollama",
-  "model": "qwen3:14b",
+  "provider": "openai",
+  "model": "models/gemini-3.1-flash-lite",
   "n_queries": 30,
   "tool_selection_accuracy": 1,
   "argument_accuracy": 1.0,
-  "fact_recall": 0.971,
+  "fact_recall": 1.0,
   "answers_with_ungrounded_numbers": 0,
-  "end_to_end_success_rate": 0.967,
+  "end_to_end_success_rate": 1,
   "success_by_category": {
     "prediction": "8/8",
-    "stats": "7/8",
+    "stats": "8/8",
     "surface_comparison": "5/5",
     "multi_step": "5/5",
     "invalid": "4/4"
   },
   "latency_s": {
-    "mean": 10.73,
-    "median": 11.7,
-    "p90": 14.96
+    "mean": 3.32,
+    "median": 1.79,
+    "p90": 3.21
   }
 }

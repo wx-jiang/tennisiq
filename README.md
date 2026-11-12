@@ -21,18 +21,20 @@ All numbers below were measured by the scripts in `evaluation/` and are saved in
 - XGBoost reduces log loss vs. Elo by **0.017** (paired bootstrap 95% CI: 0.009 to 0.025, 2,000 resamples over matches), so the improvement is statistically distinguishable from zero.
 - Elo on its own is slightly *less* accurate than simply picking the higher-ranked player (63.0% vs. 64.8%). A tour-level-only Elo starts every newcomer at 1500, which overrates qualifiers and lucky losers. XGBoost gains mainly by combining Elo with ATP rank/points.
 
-**Agent benchmark (30 queries, local `qwen3:14b` via Ollama)**
+**Agent benchmark (30 queries, same agent code and prompt, two LLMs)**
 
-| Metric | Result |
-|---|---|
-| Tool selection accuracy | 30/30 (100%) |
-| Argument accuracy | 100% |
-| Fact recall (ground-truth numbers present in answer) | 33/34 (97.1%) |
-| Answers containing a number not found in any tool output | 0/30 |
-| **End-to-end success** | **29/30 (96.7%)**: prediction 8/8, stats 7/8, surface 5/5, multi-step 5/5, invalid 4/4 |
-| Latency per query (M3 Pro, 36 GB) | mean 10.7 s, median 11.7 s, p90 15.0 s |
+| Metric | `qwen3:14b` (local, Ollama) | `gemini-3.1-flash-lite` (cloud API) |
+|---|---|---|
+| Tool selection accuracy | 30/30 (100%) | 30/30 (100%) |
+| Argument accuracy | 100% | 100% |
+| Fact recall (ground-truth numbers present in answer) | 33/34 (97.1%) | 34/34 (100%) |
+| Answers containing a number not found in any tool output | 0/30 | 0/30 |
+| **End-to-end success** | **29/30 (96.7%)** | **30/30 (100%)** |
+| Latency per query, median / p90 | 11.7 s / 15.0 s (M3 Pro, 36 GB) | 1.8 s / 3.2 s |
 
-The single failure: asked for Federer's 2017 record, the agent reported 54 wins in 59 matches but never stated the losses, which the strict fact check requires. Results come from a single run at temperature 0. Small changes to the model or prompt can shift them.
+- **Qwen's one failure:** asked for Federer's 2017 record, it gave 54 wins in 59 matches but didn't state the losses, which the strict fact check requires.
+- **Gemini latency:** the run was paced (`--pause 15`) to stay under the free tier's rate limit. One query took 28.4 s, consistent with a rate-limit retry, which raises the mean to 3.3 s.
+- Each model was run once at temperature 0. A perfect score on 30 author-written queries shows the tools and validation work reliably. It doesn't mean the agent never makes mistakes.
 
 ## Features
 
@@ -127,9 +129,15 @@ Scored programmatically against 30 queries (8 prediction, 8 historical stats, 5 
 3. **Fact recall:** ground-truth values (computed by calling the tool directly) appear in the answer (0.596, 59.6% or 60% all count).
 4. **Grounding:** every number in the answer appears in a tool result or the question (years, dates and the constants 0–3, 5, 20 are exempt).
 5. **End-to-end success:** all of the above, plus for invalid inputs no percentage in the answer.
-6. **Latency:** wall-clock seconds per query on an M3 Pro (36 GB).
+6. **Latency:** wall-clock seconds per query (setup turns and `--pause` waits excluded).
 
-Per-query outputs: `evaluation/results/agent_eval_results.json`; summary: `artifacts/agent_eval_summary.json`.
+Per-model outputs are in `evaluation/results/agent_eval_results_<model>.json` and `artifacts/agent_eval_summary_<model>.json`. Each run also overwrites `agent_eval_results.json` and `agent_eval_summary.json`, which the app's Model Performance tab displays.
+
+To benchmark a cloud model, set the `LLM_*`/`OPENAI_*` variables (see [Deployment](#deployment)) and pace requests on rate-limited free tiers:
+
+```bash
+python -m evaluation.evaluate_agent --pause 15
+```
 
 ## Installation
 
@@ -165,7 +173,7 @@ The deployed app uses committed artifacts only, so it needs no data download, GP
 
 1. Push this repository to GitHub (the `artifacts/` folder must be committed; `data/` is ignored).
 2. On [share.streamlit.io](https://share.streamlit.io), create an app from the repo with main file `app.py`.
-3. **Optional, to enable the public chat:** in *App settings → Secrets*, paste the contents of `.streamlit/secrets.toml.example` with a real key. Any OpenAI-compatible endpoint with tool calling works (OpenAI, Groq, Together, OpenRouter via `OPENAI_BASE_URL`). Cloud inference is **billed per token** by the provider. Without secrets, the chat tab shows setup instructions and the rest of the app works normally.
+3. **Optional, to enable the public chat:** in *App settings → Secrets*, paste the contents of `.streamlit/secrets.toml.example` with a real key. The template is set up for Google Gemini (key from [Google AI Studio](https://aistudio.google.com)), which is the cloud model benchmarked above. Any OpenAI-compatible endpoint with tool calling also works (OpenAI, Groq, Together, OpenRouter via `OPENAI_BASE_URL`); `LLM_PROVIDER = "openai"` refers to that API format, not the vendor. To test locally, copy the template to the git-ignored `.streamlit/secrets.toml`; never put a real key in the tracked `.example` file. Cloud inference is **billed per token** by the provider. Without secrets, the chat tab shows setup instructions and the rest of the app works normally.
 
 Credentials are read only from environment variables / Streamlit secrets and are never hard-coded.
 
